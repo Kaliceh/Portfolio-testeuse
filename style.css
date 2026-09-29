@@ -614,8 +614,9 @@ p {
        ========================= */
 
     .bgimage {
-        min-height: 100vh;
-        padding: 90px 15px 30px;
+        min-height: auto;
+        padding: 75px 10px 30px;
+        justify-content: flex-start;
     }
 
     .hero_title {
