@@ -76,15 +76,15 @@ main {
     min-height: 100vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-        url("images/imagebg.jpg");
+        url("images/imagebg.webp");
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 100px 20px 40px;
     flex-direction: column;
 }
-
 
 
 /* Fenêtre principale */
@@ -247,9 +247,11 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    height: 0%;
+    height: 100%;
     background: #49d17d;
-    transition: height 0.15s linear;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.15s linear;
 }
 
 .column-test.is-testing .text-test {
@@ -506,6 +508,9 @@ main {
 
 .contactColumn i {
     color: #198754;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
 }
 
 .final-test {

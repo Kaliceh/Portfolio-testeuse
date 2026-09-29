@@ -47,7 +47,7 @@ function handleTestProgress() {
 
             percentage = Math.min(100, Math.max(0, percentage));
 
-            progress.style.height = `${percentage}%`;
+            progress.style.transform = `scaleY(${percentage / 100})`;
 
             // Pas encore dans la section
             if (percentage <= 0) {
@@ -66,7 +66,7 @@ function handleTestProgress() {
             if (percentage >= 90) {
                 testColumn.classList.remove("is-testing");
                 testColumn.classList.add("is-passed");
-                progress.style.height = "100%";
+                progress.style.transform = "scaleY(1)";;
             }
         }
 
