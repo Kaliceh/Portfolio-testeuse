@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Portfolio Name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Portfolio de Kalice, testeuse informatique junior. Découvrez mes compétences, mes projets et mon parcours.">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" async>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll">
+        <div class="container">
+            <a class="navbar-brand" href="#">KH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contactez-moi</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="bgimage" id="home">
+            <h1 class="hero_title">Salut, moi c'est Kalice</h1>
+            <h2 class="hero_desc">Testeuse QA</h2>
+            <div class="test-dashboard">
+
+                <div class="test-header">
+                    <span class="test-logo">KH Testing</span>
+                    <span class="test-status">● TEST RUN #001</span>
+                </div>
+
+                <div class="test-content">
+
+                    <div class="test-info">
+                        <span class="test-label">TEST RUN #001</span>
+                        <div class="test-line"></div>
+
+                        <div class="test-checks">
+                            <p><span>✓</span> Tests fonctionnels</p>
+                            <p><span>✓</span> Tests E2E</p>
+                            <p><span>✓</span> Tests unitaires</p>
+                            <p><span>✓</span> Tests API</p>
+                        </div>
+                        <a href="#about" class="test-button">
+                            [ Lancer les tests ]
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- about section-->
+        <section id="about">
+            <div class="about-layout">
+
+                <div class="column-test">
+                    <span class="text-test">
+                        <span class="test-default">TO TEST</span>
+                        <span class="test-running">TESTING<span class="dots"></span></span>
+                    </span>
+
+                    <div class="test-progress-line">
+                        <div class="test-line-progress"></div>
+                    </div>
+
+                    <span class="passed"> ✓ PASSED</span>
+                </div>
+
+                <div class="container mt-4 pt-4 about-content">
+                    <h3 class="text-center">A propos</h3>
+                    <div class="about-row">
+
+                        <div class="about-profile">
+
+                            <img src="images/photo-me.webp" class="imageAboutPage" alt="Photo de Kalice">
+
+                            <div class="profile-info">
+                                <h4>Kalice Herouard</h4>
+                                <p class="profile-job">Testeuse informatique junior</p>
+
+                                <ul>
+                                    <li>👤 26 ans</li>
+                                    <li>📍 Amboise / Tours</li>
+                                    <li>🎓 Formation en test logiciel</li>
+                                    <li>💼 Recherche d'une opportunité</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="about-description">
+
+                            <p>
+                                Je suis Kalice, testeuse QA, en reconversion
+                                vers le domaine de la qualité logicielle.
+                            </p>
+
+                            <p>
+                                Au cours de ma formation, j'ai travaillé sur différentes étapes
+                                du processus de test : revue des exigences, conception de la
+                                stratégie de test, rédaction du cahier de recette, conception
+                                et exécution des scénarios de test, ainsi que le suivi des anomalies.
+                            </p>
+
+                            <p>
+                                J'ai également réalisé des tests fonctionnels, unitaires, E2E
+                                et API, notamment avec Cypress et Vitest.
+                            </p>
+
+                            <span class="about-goal">
+                                Mon objectif : contribuer à livrer des applications fiables, fonctionnelles et conformes
+                                aux besoins utilisateurs.
+                            </span>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills section-->
+        <section id="skills">
+            <div class="about-layout">
+
+                <div class="column-test">
+                    <span class="text-test">
+                        <span class="test-default">TO TEST</span>
+                        <span class="test-running">TESTING<span class="dots"></span></span>
+                    </span>
+
+                    <div class="test-progress-line">
+                        <div class="test-line-progress"></div>
+                    </div>
+
+                    <span class="passed">✓ PASSED</span>
+                </div>
+
+                <div class="container about-content">
+                    <h4 class="text-center">Mes compétences</h4>
+
+                    <div id="skillsContainer" class="row mt-4">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- portfolio section-->
+        <section id="portfolio">
+            <div class="about-layout">
+
+                <div class="column-test">
+                    <span class="text-test">
+                        <span class="test-default">TO TEST</span>
+                        <span class="test-running">TESTING<span class="dots"></span></span>
+                    </span>
+
+                    <div class="test-progress-line">
+                        <div class="test-line-progress"></div>
+                    </div>
+
+                    <span class="passed">✓ PASSED</span>
+                </div>
+
+                <div class="container about-content">
+                    <h4 class="text-center">Portfolio</h4>
+
+                    <div id="portfolioContainer" class="row mt-4">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- contact section-->
+        <section id="contact">
+            <div class="container mt-3 contactContent">
+                <h3 class="text-center">Contactez-moi</h3>
+                <div class="row">
+                    <div class="col-lg-4 mt-4 contactColumn">
+                        <i class="fa-solid fa-phone fa-2x"></i>
+                        <p>07-52-62-62-33</p>
+                    </div>
+                    <div class="col-lg-4 mt-4 contactColumn">
+                        <a href="mailto:prenom.nom@gmail.com?subject=Contact depuis mon portfolio" target="_blank"
+                            rel="noopener noreferrer" aria-label="Envoyer un e-mail">
+                            <i class="fa-regular fa-envelope fa-2x"></i>
+                        </a>
+                        <p>kaliceh37400@gmail.com</p>
+                    </div>
+                    <div class="col-lg-4 mt-4 contactColumn">
+                        <a href="https://www.linkedin.com/in/kalice-herouard-78a39a1b9/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
+                            <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                        </a>
+                        <p>Kalice Herouard</p>
+                    </div>
+                </div>
+
+                <div class="final-test">
+                    <div class="final-test-line"></div>
+
+                    <div class="final-test-status">
+                        <span class="final-check">✓</span>
+                        <span>ALL TESTS PASSED</span>
+                    </div>
+
+                    <p>Portfolio successfully tested.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- load javascript after loading all html content -->
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>

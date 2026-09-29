@@ -1,0 +1,29 @@
+[
+    {
+        "image": "projet-tomsen.webp",
+        "title": "Tomsen - Application de gestion financière",
+        "text": "Projet QA portant sur l'analyse des exigences, la définition d'une stratégie de test et la conception d'un cahier de recette.",
+        "link": "https://github.com/Kaliceh/Tomsen-projet11",
+        "alt": "Image représentant le projet Tomsen",
+        "width": 772,
+        "height": 306
+    },
+    {
+        "image": "projet-ecoblissbath.webp",
+        "title": "Eco Bliss Bath - Application e-commerce",
+        "text": "Automatisation de tests avec Cypress sur une application e-commerce, incluant tests API, fonctionnels, smoke tests et tests de sécurité XSS.",
+        "link": "https://github.com/Kaliceh/EcoBlissBath",
+        "alt": "Image représentant le projet Eco Bliss Bath",
+        "width": 772,
+        "height": 302
+    },
+    {
+        "image": "projet-kasa.webp",
+        "title": "Kasa - Application de location immobilière",
+        "text": "Développement d’une application web de location de logements avec React, incluant la création de composants et de fonctionnalités interactives.",
+        "link": "https://github.com/Kaliceh/Kasa-projet-8",
+        "alt": "Image représentant le projet Kasa",
+        "width": 772,
+        "height": 306
+    }
+]
