@@ -256,11 +256,6 @@ main {
     color: #49d17d;
 }
 
-.dots {
-    display: inline-block;
-    width: 18px;
-    text-align: left;
-}
 
 .dots::after {
     content: ".";
@@ -588,31 +583,355 @@ p {
 
 @media (max-width: 768px) {
 
+    /* =========================
+       NAVBAR
+       ========================= */
+
+    .navbar.fixed-top {
+        position: sticky !important;
+        top: 0;
+        z-index: 1030;
+        background-color: #000 !important;
+    }
+
+    /* Menu déplié */
+    .navbar-collapse {
+        background-color: #000;
+        padding: 10px 0 15px;
+    }
+
+    .navbar-nav {
+        gap: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 15px;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
     .bgimage {
+        min-height: 100vh;
         padding: 90px 15px 30px;
     }
 
+    .hero_title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero_desc {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       TEST DASHBOARD
+       ========================= */
+
+    .test-dashboard {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .test-header {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .test-logo {
+        font-size: 0.9rem;
+    }
+
+    .test-status {
+        font-size: 0.75rem;
+    }
+
+    .test-content {
+        padding: 25px 20px;
+    }
+
+    .test-label {
+        font-size: 0.8rem;
+    }
+
+    .test-checks p {
+        font-size: 0.85rem;
+        margin: 10px 0;
+    }
+
+    /* Le bouton ne doit plus être en position absolue sur mobile */
+    .test-button {
+        position: static;
+        display: inline-block;
+        transform: none;
+        margin-top: 20px;
+    }
+
+
+    /* =========================
+       COLONNE TEST
+       ========================= */
+
+    .about-layout {
+        flex-direction: column;
+    }
+
+    .column-test {
+        width: 100%;
+        min-height: 140px;
+    }
+
+    .test-progress-line {
+        width: 2px;
+        flex: 1;
+        margin: 15px 0;
+    }
+
+
+    /* =========================
+       ABOUT
+       ========================= */
+
+    .about-row {
+        grid-template-columns: 1fr;
+    }
+
+    .about-profile {
+        padding-right: 0;
+    }
+
+    .about-description {
+        padding-left: 0;
+        padding-top: 25px;
+        margin-top: 30px;
+        border-left: none;
+        border-top: 2px solid rgba(73, 209, 125, 0.2);
+    }
+
+    .imageAboutPage {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    /* =========================
+       SKILLS
+       ========================= */
+
+    .skillsText.card {
+        height: auto;
+        min-height: 350px;
+    }
+
+    .skillsText img {
+        height: 130px;
+    }
+
+
+    /* =========================
+       PORTFOLIO
+       ========================= */
+
+    .portfolioContent.card {
+        height: auto;
+        min-height: 430px;
+    }
+
+    .portfolioContent .card-img-top {
+        height: 190px;
+    }
+
+    .portfolioContent .card-body {
+        height: auto;
+        min-height: 240px;
+    }
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contactColumn {
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       FINAL TEST
+       ========================= */
+
+    .final-test {
+        margin-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    .column-test .passed {
+        display: none;
+    }
+
+}
+
+
+/* =========================
+   PETITS TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .bgimage {
+        padding: 80px 10px 25px;
+    }
+
+    .hero_title {
+        font-size: 1.8rem;
+    }
+
+    .hero_desc {
+        font-size: 1rem;
+    }
+
+    /* Dashboard */
     .test-dashboard {
         width: 100%;
     }
 
     .test-header {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 15px;
     }
 
     .test-content {
-        padding: 30px 20px;
+        padding: 20px 15px;
     }
 
+    .test-checks p {
+        font-size: 0.8rem;
+    }
+
+    /* À propos */
+    .imageAboutPage {
+        width: 140px;
+        height: 140px;
+    }
+
+    .about-description {
+        padding-top: 20px;
+        margin-top: 25px;
+    }
+
+    .about-description p {
+        font-size: 0.9rem;
+    }
+
+    /* Cartes compétences */
+    .skillsText.card {
+        min-height: 330px;
+    }
+
+    .skillsText img {
+        height: 120px;
+    }
+
+    /* Cartes portfolio */
+    .portfolioContent.card {
+        min-height: 0;
+        height: auto;
+    }
+
+    .portfolioContent .card-img-top {
+        height: 180px;
+    }
+
+    .portfolioContent .card-body {
+        min-height: 0;
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    .portfolioContent .card-title {
+        font-size: 1.1rem;
+    }
+
+    .portfolioContent .card-text {
+        font-size: 0.85rem;
+    }
+
+    /* Contact */
+    .contactColumn {
+        margin-bottom: 20px;
+    }
+
+    /* Final test */
+    .final-test {
+        margin-top: 50px;
+    }
+
+    .final-test-status {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .final-test p {
+        font-size: 0.7rem;
+    }
+
+    .column-test .passed {
+        display: none;
+    }
+
+}
+
+
+/* =========================
+   TRÈS PETITS TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 360px) {
+
     .hero_title {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
     .hero_desc {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 
-    .test-checks {
-        margin-bottom: 35px;
+    .test-content {
+        padding: 18px 12px;
+    }
+
+    .test-logo {
+        font-size: 0.8rem;
+    }
+
+    .test-status {
+        font-size: 0.7rem;
+    }
+
+    .test-checks p {
+        font-size: 0.75rem;
+    }
+
+    .imageAboutPage {
+        width: 130px;
+        height: 130px;
+    }
+
+    .portfolioContent .card-img-top {
+        height: 160px;
+    }
+
+    .portfolioContent .card-title {
+        font-size: 1rem;
+    }
+
+    .portfolioContent .card-text {
+        font-size: 0.8rem;
     }
 }
