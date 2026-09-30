@@ -499,6 +499,428 @@ main {
     flex-grow: 1;
 }
 
+/* =========================
+   MODALE PROJETS
+   ========================= */
+
+.portfolio-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(73, 209, 125, 0.7);
+    box-shadow: 0 0 25px rgba(73, 209, 125, 0.15);
+}
+
+.portfolio-card:focus {
+    outline: 2px solid #49d17d;
+    outline-offset: 3px;
+}
+
+.portfolio-more {
+    display: block;
+    margin-top: auto;
+    color: #49d17d;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* Fond de la modale */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Fond sombre */
+
+.project-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+
+/* Fenêtre */
+
+.project-modal-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 850px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #0c1220;
+
+    border: 1px solid rgba(73, 209, 125, 0.35);
+    border-radius: 15px;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7);
+
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0);
+}
+
+
+/* Image */
+
+.project-modal-image {
+    display: block;
+
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+}
+
+
+/* Contenu */
+
+.project-modal-body {
+    padding: 30px;
+    color: white;
+}
+
+.project-modal-body h3 {
+    color: #49d17d;
+    margin-bottom: 20px;
+}
+
+
+#modalProjectTitle {
+    color: #49d17d;
+}
+
+#modalProjectDescription {
+    white-space: pre-line;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+
+/* Informations */
+
+.project-modal-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    margin-top: 30px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-modal-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-modal-details strong {
+    color: #49d17d;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-modal-details span {
+    color: white;
+    font-size: 0.85rem;
+}
+
+
+/* Bouton */
+
+.project-modal-button {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 10px 20px;
+
+    border: 1px solid #49d17d;
+    border-radius: 6px;
+
+    color: #49d17d;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.project-modal-button:hover {
+    background: #49d17d;
+    color: #000;
+}
+
+
+/* Bouton fermer */
+
+.project-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    z-index: 3;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.project-modal-close:hover {
+    background: #49d17d;
+    color: #000;
+}
+
+
+/* Empêche le scroll derrière la modale */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Bouton fermer */
+
+.project-modal-close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    color: white;
+
+    font-size: 1.7rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    z-index: 2;
+}
+
+.project-modal-close:hover {
+
+    color: #49d17d;
+
+    border-color: #49d17d;
+
+    transform: rotate(90deg);
+}
+
+/* Header */
+
+.project-modal-header {
+
+    display: grid;
+
+    grid-template-columns: 40% 60%;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-modal-header img {
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 16px 0 0 0;
+}
+
+.project-modal-header>div {
+
+    padding: 35px;
+}
+
+.project-modal-label {
+
+    color: #49d17d;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.project-modal-header h2 {
+
+    margin: 10px 0;
+
+    color: white;
+
+    font-size: 2rem;
+}
+
+.project-modal-role {
+
+    color: #b8bec9;
+
+    margin: 0;
+}
+
+/* Contenu */
+
+.project-modal-body {
+
+    padding: 30px 40px 40px;
+}
+
+.project-modal-section {
+
+    margin-bottom: 28px;
+}
+
+.project-modal-section:last-child {
+
+    margin-bottom: 0;
+}
+
+.project-modal-section h3 {
+
+    color: #49d17d;
+
+    font-size: 1rem;
+
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
+}
+
+.project-modal-section p {
+
+    color: #e5e7eb;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+/* Missions */
+
+.project-missions {
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.project-missions li {
+
+    color: #e5e7eb;
+
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+}
+
+/* Technologies */
+
+.project-technologies {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.project-technologies span {
+
+    padding: 6px 12px;
+
+    border: 1px solid rgba(73, 209, 125, 0.35);
+
+    border-radius: 20px;
+
+    background: rgba(73, 209, 125, 0.06);
+
+    color: #49d17d;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+}
+
+/* Bloque le scroll de la page quand la modale est ouverte */
+
+body.modal-open {
+
+    overflow: hidden;
+}
+
 /* contact */
 .contactColumn {
     display: flex;
@@ -522,7 +944,7 @@ main {
 .final-test-line {
     width: 2px;
     height: 80px;
-    background: rgba(73, 209, 125, 0.15);
+    background: rgb(255, 255, 255);
     margin: 0 auto 25px;
     transition: background 0.6s ease;
 }
@@ -532,20 +954,19 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 700;
     letter-spacing: 2px;
     transition: all 0.6s ease;
 }
 
 .final-check {
-    opacity: 0;
     transform: scale(0);
     transition: all 0.5s ease;
 }
 
 .final-test p {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 0.85rem;
     margin-top: 10px;
 }
@@ -755,6 +1176,24 @@ p {
     .portfolioContent .card-body {
         height: auto;
         min-height: 240px;
+    }
+
+    .project-modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .project-modal-image {
+        height: 180px;
+    }
+
+    .project-modal-body {
+        padding: 20px;
+    }
+
+    .project-modal-details {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
 

@@ -120,44 +120,202 @@ function createSkillsFromJSON() {
             });
         });
 }
-// Function to dynamically create HTML elements from the JSON file
 function createPortfolioFromJSON() {
     const container = document.querySelector("#portfolio .container");
     let row = document.createElement("div");
     row.classList.add("row");
 
-    // Load the JSON file
     fetch("data/portfolio.json")
         .then((response) => response.json())
         .then((data) => {
-            // Iterate through the JSON data and create HTML elements
+
             data.forEach((item, index) => {
+
                 const card = document.createElement("div");
                 card.classList.add("col-lg-4", "mt-4");
+
                 card.innerHTML = `
-                    <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}" alt="${item.alt}">
-                    <div class="card-body">
-                        <h4 class="card-title">${item.title}</h4>
-                        <p class="card-text">${item.text}</p>
-                        <div class="text-center">
-                            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-success">Lien</a>
+                    <div class="card portfolioContent portfolio-card" 
+                         data-project="${index}"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Voir les détails du projet ${item.title}">
+
+                        <img 
+                            class="card-img-top" 
+                            src="images/${item.image}" 
+                            alt="${item.alt}"
+                            width="${item.width}" 
+                            height="${item.height}"
+                        >
+
+                        <div class="card-body">
+                            <h4 class="card-title">${item.title}</h4>
+
+                            <p class="card-text">
+                                ${item.text}
+                            </p>
+
+                            <span class="portfolio-more">
+                                Voir le projet →
+                            </span>
                         </div>
                     </div>
-                </div>
                 `;
 
-                // Append the card to the current row
                 row.appendChild(card);
 
-                // If the index is a multiple of 3 or it's the last element, create a new row
                 if ((index + 1) % 3 === 0 || index === data.length - 1) {
                     container.appendChild(row);
                     row = document.createElement("div");
                     row.classList.add("row");
                 }
             });
+
+            // Création de la modale
+            createProjectModal(data);
+
+            // Clic sur les cartes
+            const cards = document.querySelectorAll(".portfolio-card");
+
+            cards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    const projectIndex = card.dataset.project;
+                    openProjectModal(data[projectIndex]);
+                });
+
+                // Permet aussi l'ouverture avec Entrée
+                card.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+
+                        const projectIndex = card.dataset.project;
+                        openProjectModal(data[projectIndex]);
+                    }
+                });
+            });
+        })
+        .catch((error) => {
+            console.error("Erreur lors du chargement des projets :", error);
         });
+}
+
+function createProjectModal(data) {
+
+    const modal = document.createElement("div");
+
+    modal.id = "projectModal";
+    modal.classList.add("project-modal");
+
+    modal.innerHTML = `
+        <div class="project-modal-overlay"></div>
+
+        <div class="project-modal-content">
+
+            <button class="project-modal-close" aria-label="Fermer">
+                ×
+            </button>
+
+            <div class="project-modal-body">
+
+                <h4 id="modalProjectTitle">Titre du projet</h4>
+
+                <p id="modalProjectDescription"></p>
+
+                <div class="project-modal-details">
+
+                    <div>
+                        <strong>Projet</strong>
+                        <span id="modalProjectType"></span>
+                    </div>
+
+                    <div>
+                        <strong>Technologies</strong>
+                        <span id="modalProjectTech"></span>
+                    </div>
+
+                    <div>
+                        <strong>Tests</strong>
+                        <span id="modalProjectTests"></span>
+                    </div>
+
+                </div>
+
+                <a 
+                    id="modalProjectLink"
+                    class="project-modal-button"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Voir le projet
+                </a>
+
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeButton = modal.querySelector(".project-modal-close");
+    const overlay = modal.querySelector(".project-modal-overlay");
+
+    closeButton.addEventListener("click", closeProjectModal);
+    overlay.addEventListener("click", closeProjectModal);
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeProjectModal();
+        }
+    });
+}
+
+
+function openProjectModal(project) {
+
+    const modal = document.querySelector("#projectModal");
+
+    document.querySelector("#modalProjectTitle").textContent =
+        project.title;
+
+    document.querySelector("#modalProjectDescription").textContent =
+        project.description || project.text;
+
+    document.querySelector("#modalProjectType").textContent =
+        project.type || "Projet OpenClassrooms";
+
+    document.querySelector("#modalProjectTech").textContent =
+        project.technologies || "À préciser";
+
+    document.querySelector("#modalProjectTests").textContent =
+        project.tests || "À préciser";
+
+    document.querySelector("#modalProjectLink").href =
+        project.link || "#";
+
+    modal.classList.add("active");
+
+    document.body.classList.add("modal-open");
+}
+
+
+function closeProjectModal() {
+
+    const modal = document.querySelector("#projectModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+}
+
+
+function handleModalEscape(event) {
+
+    if (event.key === "Escape") {
+        closeProjectModal();
+    }
 }
 
 function handleFinalTest() {

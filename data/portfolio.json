@@ -3,27 +3,40 @@
         "image": "projet-tomsen.webp",
         "title": "Tomsen - Application de gestion financière",
         "text": "Projet QA portant sur l'analyse des exigences, la définition d'une stratégie de test et la conception d'un cahier de recette.",
+        "description": "Tomsen est une application de gestion financière développée dans un contexte Agile pour permettre aux utilisateurs de consulter et gérer différentes informations liées à leurs comptes et opérations bancaires.\n\nDans ce projet, j’ai occupé le rôle de consultante test. Mon travail a principalement porté sur l’analyse et la préparation de la campagne de tests afin de vérifier que les fonctionnalités de l’application répondaient aux exigences définies.\n\nJ’ai commencé par réaliser des revues des exigences afin d’identifier les besoins fonctionnels, les éventuelles incohérences et les points nécessitant une attention particulière. Cette analyse m’a permis d’identifier les fonctionnalités à couvrir et de déterminer leur niveau de criticité.\n\nJ’ai ensuite élaboré une stratégie de test, en définissant les différents types de tests à prévoir et en priorisant les scénarios selon leur criticité. Une attention particulière a notamment été portée à l’authentification, aux données bancaires, aux documents, aux transactions, à la consommation, à l’espace conseiller ainsi qu’à la double authentification.\n\nJ’ai également conçu le cahier de recette, comprenant les scénarios et cas de test nécessaires à la vérification des fonctionnalités. Les objectifs de couverture fixés étaient notamment de couvrir 100 % des fonctionnalités critiques et 85 % des fonctionnalités majeures et mineures.\n\nLe projet intégrait également des contraintes techniques spécifiques, notamment une limitation des appels API et des règles liées à la gestion des documents et des données bancaires. Ces contraintes ont été prises en compte lors de la conception des scénarios de test.",
         "link": "https://github.com/Kaliceh/Tomsen-projet-11",
         "alt": "Image représentant le projet Tomsen",
         "width": 772,
-        "height": 306
+        "height": 306,
+        "technologies": "Excel, Notion",
+        "tests": "Stratégie de test : tests manuels, automatisés et exploratoires",
+        "type": "Projet réalisé dans le cadre de ma formation de testeuse informatique"
     },
     {
         "image": "projet-ecoblissbath.webp",
         "title": "Eco Bliss Bath - Application e-commerce",
         "text": "Automatisation de tests avec Cypress sur une application e-commerce, incluant tests API, fonctionnels, smoke tests et tests de sécurité XSS.",
+        "description": "Eco Bliss Bath est une application e-commerce spécialisée dans la vente de produits de beauté écoresponsables, avec notamment un catalogue de savons solides. L’application permet aux utilisateurs de se connecter, consulter les produits, gérer leur panier et laisser des avis.\n\nDans ce projet, j’ai occupé le rôle de QA Engineer. Ma mission consistait à automatiser une partie de la campagne de tests afin de sécuriser les fonctionnalités essentielles de l’application et d’identifier les anomalies avant une éventuelle mise en production.\n\nJ’ai commencé par analyser les fonctionnalités à couvrir afin de définir les tests à automatiser. Dans un contexte de budget limité, j’ai sélectionné les scénarios fonctionnels présentant le plus fort impact métier, notamment l’authentification et la gestion du panier, qui constitue une étape centrale du parcours d’achat.\n\nJ’ai ensuite développé les tests avec Cypress et JavaScript. La campagne comprend des tests API, des smoke tests, des tests fonctionnels sur l’authentification et le panier, ainsi qu’un test de sécurité XSS sur les avis produits.\n\nL’implémentation utilise notamment cy.request pour les tests API, cy.intercept pour intercepter les requêtes réseau et une commande personnalisée getBySel pour cibler les éléments de l’interface à l’aide des attributs data-testid.\n\nÀ l’issue de la campagne, j’ai analysé les résultats et créé cinq rapports d’incident concernant notamment la gestion des stocks, les quantités ajoutées au panier et le contrat de l’API. Ces résultats m’ont permis d’établir un bilan de campagne et de formuler une recommandation concernant la mise en production de la version testée.",
         "link": "https://github.com/Kaliceh/EcoBlissBath",
         "alt": "Image représentant le projet Eco Bliss Bath",
         "width": 772,
-        "height": 302
+        "height": 302,
+        "technologies": "Cypress, JavaScript, Docker, Node.js, Git, Github",
+        "tests": "Tests API, smoke tests, tests fonctionnels, tests de sécurité XSS",
+        "type": "Projet réalisé dans le cadre de ma formation de testeuse informatique"
     },
     {
         "image": "projet-kasa.webp",
         "title": "Kasa - Application de location immobilière",
         "text": "Développement d’une application web de location de logements avec React, incluant la création de composants et de fonctionnalités interactives.",
+        "description": "Kasa est une application web de location immobilière permettant aux utilisateurs de consulter différents logements et d’accéder à leurs informations détaillées. L’objectif du projet était de développer une interface moderne et responsive à partir d’une maquette fournie, tout en structurant l’application avec React.\n\nDans ce projet, j’ai travaillé sur le développement frontend avec React. Mon travail a consisté à créer les différents composants de l’application, à intégrer les fonctionnalités demandées et à assurer une navigation fluide entre les différentes pages.\n\nJ’ai notamment participé à la mise en place de composants réutilisables afin de structurer l’interface et de faciliter la maintenance du projet. J’ai développé le diaporama des logements, permettant de parcourir les différentes photos avec des boutons de navigation et un compteur, ainsi que les éléments permettant d’afficher ou de masquer certaines informations complémentaires.\n\nUne attention particulière a également été portée à la gestion des cas particuliers, notamment lorsqu’un logement ne possède pas d’image disponible, avec l’utilisation d’une image de remplacement. La navigation entre les contenus et les interactions de l’interface ont été développées afin de respecter le fonctionnement attendu de l’application.\n\nLe projet m’a permis de mettre en pratique React, la gestion de l’état avec les hooks, la création de composants réutilisables et l’intégration d’une interface responsive adaptée aux différents formats d’écran.",
         "link": "https://github.com/Kaliceh/Kasa-projet-8",
         "alt": "Image représentant le projet Kasa",
         "width": 772,
-        "height": 306
+        "height": 306,
+        "context": "Projet réalisé dans le cadre de ma formation de testeuse informatique.",
+        "technologies": "React, JavaScript, HTML, CSS, Vite, Git, GitHub",
+        "tests": "Vérification du fonctionnement des fonctionnalités développées",
+        "type": "Projet réalisé dans le cadre de ma formation de testeuse informatique"
     }
 ]
