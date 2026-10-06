@@ -1,9 +1,27 @@
-/******* GENERAL *******/
-/* spacing on all sections */
+:root {
+    --bg-color: #070c1a;
+    --primary-color: #49d17d;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
+main {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+
+
+p {
+    color: white;
+}
+
+/* Sections */
 #about,
 #skills,
 #portfolio,
@@ -23,17 +41,18 @@ body {
     padding-bottom: 4rem;
 }
 
-main {
-    background-color: #070c1a;
-}
+/****** NAVBAR ******/
 
-/* display background dark color on navbar scroll */
 .navbar {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.navbar.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
 .navbar.navbar-dark .navbar-nav .nav-link:hover {
-    color: #49d17d;
+    color: var(--primary-color);
 }
 
 .navbar-nav {
@@ -41,15 +60,10 @@ main {
 }
 
 .navbarScroll.navbarDark {
-    background-color: #000000;
+    background-color: #000;
 }
 
-.navbar.navbar-dark .navbar-nav .nav-link {
-    color: rgb(255, 255, 255);
-}
-
-
-/* Texte principal */
+/****** HERO ******/
 
 .hero-text {
     text-align: center;
@@ -68,50 +82,38 @@ main {
     color: white;
 }
 
-/* =========================
-   HERO - TEST DASHBOARD
-   ========================= */
-
 .bgimage {
     min-height: 100vh;
+    padding: 100px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
         url("images/imagebg.webp");
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 20px 40px;
-    flex-direction: column;
 }
 
-
-/* Fenêtre principale */
+/****** TEST DASHBOARD ******/
 
 .test-dashboard {
     width: 50%;
     max-width: 1000px;
-
-    background: rgba(10, 15, 20, 0.90);
+    overflow: hidden;
+    color: white;
+    background: rgba(10, 15, 20, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-
-    color: white;
-    overflow: hidden;
 }
-
-/* Barre supérieure */
 
 .test-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    justify-content: space-between;
     padding: 18px 25px;
-
     background: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -122,33 +124,27 @@ main {
 }
 
 .test-status {
-    color: #49d17d;
+    color: var(--primary-color);
     font-size: 0.85rem;
     font-weight: 600;
 }
-
-/* Contenu */
 
 .test-content {
     padding: 30px;
 }
 
-/* TEST RUN */
-
 .test-label {
+    color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #49d17d;
 }
 
 .test-line {
     height: 1px;
-    background: rgba(255, 255, 255, 0.2);
     margin: 12px 0 25px;
+    background: rgba(255, 255, 255, 0.2);
 }
-
-/* Liste des tests */
 
 .test-checks p {
     margin: 8px 0;
@@ -156,38 +152,30 @@ main {
 }
 
 .test-checks span {
-    color: #49d17d;
-    font-weight: 700;
     margin-right: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
 }
-
-
-
-/* Bouton */
 
 .test-button {
     position: absolute;
-    left: 50%;
     top: 65%;
-    transform: translateX(-50%);
-
+    left: 50%;
     padding: 12px 25px;
-
-    border: 1px solid #49d17d;
-    border-radius: 6px;
-
-    color: #49d17d;
-    text-decoration: none;
+    transform: translateX(-50%);
+    color: var(--primary-color);
     font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
 }
 
 .test-button:hover {
-    background-color: #49d17d;
     color: #000;
+    background-color: var(--primary-color);
 }
 
-
-/*column test*/
+/****** COLONNE TEST ******/
 
 .about-layout {
     display: flex;
@@ -197,7 +185,6 @@ main {
 .column-test {
     width: 150px;
     flex-shrink: 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,21 +192,20 @@ main {
 
 .text-test,
 .passed {
-    font-weight: 700;
     font-size: 0.85rem;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
-.text-test {
+.text-test,
+.passed {
     color: #b8bec9;
 }
 
 .passed {
-    color: #b8bec9;
     transition: all 0.4s ease;
 }
 
-/* Ligne complète */
 .test-progress-line {
     position: relative;
     flex: 1;
@@ -228,10 +214,21 @@ main {
     background: rgba(73, 209, 125, 0.15);
 }
 
-/* Partie qui se remplit */
+.test-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.15s linear;
+}
+
 .test-running {
     display: none;
-    color: #49d17d;
+    color: var(--primary-color);
 }
 
 .is-testing .test-default {
@@ -242,22 +239,33 @@ main {
     display: inline;
 }
 
-.test-line-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #49d17d;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.15s linear;
+.column-test.is-testing .text-test,
+.column-test.is-passed .text-test {
+    color: var(--primary-color);
 }
 
-.column-test.is-testing .text-test {
-    color: #49d17d;
+.column-test.is-passed .passed {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(73, 209, 125, 0.5);
 }
 
+.column-test.is-passed .passed::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 7px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Animation des points */
+.dots {
+    display: inline-block;
+    width: 18px;
+    text-align: left;
+}
 
 .dots::after {
     content: ".";
@@ -265,7 +273,9 @@ main {
 }
 
 @keyframes testingDots {
-    0% {
+
+    0%,
+    100% {
         content: ".";
     }
 
@@ -277,41 +287,9 @@ main {
         content: "...";
     }
 
-    100% {
-        content: ".";
-    }
 }
 
-.dots {
-    display: inline-block;
-    width: 18px;
-    text-align: left;
-}
-
-/* Quand le test est terminé */
-.column-test.is-passed .text-test {
-    color: #49d17d;
-}
-
-.column-test.is-passed .passed {
-    color: #49d17d;
-    text-shadow: 0 0 10px rgba(73, 209, 125, 0.5);
-}
-
-.column-test.is-passed .passed::after {
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin-left: 7px;
-    border-radius: 50%;
-    background: #49d17d;
-    box-shadow: 0 0 10px #49d17d;
-}
-
-/* =========================
-   ABOUT
-   ========================= */
+/****** ABOUT ******/
 
 .text-center {
     color: white;
@@ -329,8 +307,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding-right: 40px;
+    text-align: center;
 }
 
 .imageAboutPage {
@@ -342,8 +320,8 @@ main {
 }
 
 .profile-info {
-    color: white;
     margin-top: 15px;
+    color: white;
 }
 
 .profile-info h4 {
@@ -352,16 +330,16 @@ main {
 }
 
 .profile-job {
-    color: #49d17d;
-    font-weight: 600;
-    font-size: 0.9rem;
     margin-bottom: 12px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .profile-info ul {
-    list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .profile-info li {
@@ -370,57 +348,38 @@ main {
 }
 
 .about-description {
-    color: white;
     padding-left: 40px;
+    color: white;
     border-left: 2px solid rgba(73, 209, 125, 0.2);
 }
 
 .about-description p {
-    line-height: 1.7;
     margin-bottom: 15px;
+    line-height: 1.7;
 }
 
 .about-goal {
     display: block;
     margin-top: 20px;
+    color: var(--primary-color);
     font-weight: 600;
-    color: #49d17d;
 }
 
-/* skills */
-.skill-status {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
+/****** SKILLS ******/
 
-    color: #49d17d;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    opacity: 0;
-    transform: translateY(5px);
-
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.skillsText:hover .skill-status {
-    opacity: 1;
-    transform: translateY(0);
+#skills p {
+    text-align: center;
 }
 
 .skillsText.card {
-    height: 350px;
     position: relative;
-
+    height: 350px;
+    color: white;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-
-    color: white;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -435,16 +394,11 @@ main {
     object-fit: contain;
 }
 
-#skills p {
-    text-align: center;
-}
-
 .skillsIcon {
+    width: 100%;
     font-size: 36px;
     text-align: center;
-    width: 100%;
 }
-
 
 .card-title {
     text-align: center;
@@ -454,22 +408,37 @@ main {
     color: #008000;
 }
 
-.skillsText:hover {
-    border: 1px solid #008000;
+.skill-status {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* portfolio */
+.skillsText:hover .skill-status {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/****** PORTFOLIO ******/
+
 #portfolio p {
     text-align: center;
 }
 
 .portfolioContent.card {
     height: 430px;
+    overflow: hidden;
+    color: white;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    color: white;
-    overflow: hidden;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -499,9 +468,7 @@ main {
     flex-grow: 1;
 }
 
-/* =========================
-   MODALE PROJETS
-   ========================= */
+/****** CARTES PORTFOLIO ******/
 
 .portfolio-card {
     cursor: pointer;
@@ -515,73 +482,56 @@ main {
 }
 
 .portfolio-card:focus {
-    outline: 2px solid #49d17d;
+    outline: 2px solid var(--primary-color);
     outline-offset: 3px;
 }
 
 .portfolio-more {
     display: block;
     margin-top: auto;
-    color: #49d17d;
+    color: var(--primary-color);
     font-size: 0.85rem;
     font-weight: 600;
     text-align: center;
 }
 
-
-/* Fond de la modale */
+/****** MODALE PROJETS ******/
 
 .project-modal {
     position: fixed;
     inset: 0;
     z-index: 9999;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    opacity: 0;
     visibility: hidden;
-
+    opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .project-modal.active {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }
-
-
-/* Fond sombre */
 
 .project-modal-overlay {
     position: absolute;
     inset: 0;
-
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(6px);
 }
 
-
-/* Fenêtre */
-
 .project-modal-content {
     position: relative;
     z-index: 2;
-
     width: 90%;
     max-width: 850px;
     max-height: 90vh;
-
     overflow-y: auto;
-
     background: #0c1220;
-
     border: 1px solid rgba(73, 209, 125, 0.35);
     border-radius: 15px;
-
     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7);
-
     transform: translateY(20px);
     transition: transform 0.3s ease;
 }
@@ -590,338 +540,160 @@ main {
     transform: translateY(0);
 }
 
-
-/* Image */
-
-.project-modal-image {
-    display: block;
-
-    width: 100%;
-    height: 280px;
-
-    object-fit: cover;
-}
-
-
-/* Contenu */
-
-.project-modal-body {
-    padding: 30px;
-    color: white;
-}
-
-.project-modal-body h3 {
-    color: #49d17d;
-    margin-bottom: 20px;
-}
-
-
-#modalProjectTitle {
-    color: #49d17d;
-}
-
-#modalProjectDescription {
-    white-space: pre-line;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-
-/* Informations */
-
-.project-modal-details {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    margin-top: 30px;
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.project-modal-details div {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.project-modal-details strong {
-    color: #49d17d;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.project-modal-details span {
-    color: white;
-    font-size: 0.85rem;
-}
-
-
-/* Bouton */
-
-.project-modal-button {
-    display: inline-block;
-
-    margin-top: 30px;
-    padding: 10px 20px;
-
-    border: 1px solid #49d17d;
-    border-radius: 6px;
-
-    color: #49d17d;
-    text-decoration: none;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-.project-modal-button:hover {
-    background: #49d17d;
-    color: #000;
-}
-
-
 /* Bouton fermer */
-
 .project-modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-
-    z-index: 3;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: rgba(0, 0, 0, 0.6);
-
-    color: white;
-    font-size: 28px;
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.project-modal-close:hover {
-    background: #49d17d;
-    color: #000;
-}
-
-
-/* Empêche le scroll derrière la modale */
-
-body.modal-open {
-    overflow: hidden;
-}
-
-
-
-@keyframes modalAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Bouton fermer */
-
-.project-modal-close {
-
-    position: absolute;
-
     top: 15px;
     right: 18px;
-
+    z-index: 3;
     width: 40px;
     height: 40px;
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-
-    background: rgba(0, 0, 0, 0.4);
-
     color: white;
-
     font-size: 1.7rem;
     line-height: 1;
-
     cursor: pointer;
-
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     transition: all 0.2s ease;
-
-    z-index: 2;
 }
 
 .project-modal-close:hover {
-
-    color: #49d17d;
-
-    border-color: #49d17d;
-
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     transform: rotate(90deg);
 }
 
 /* Header */
-
 .project-modal-header {
-
     display: grid;
-
     grid-template-columns: 40% 60%;
-
     align-items: center;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-modal-header img {
-
     width: 100%;
     height: 220px;
-
     object-fit: cover;
-
     border-radius: 16px 0 0 0;
 }
 
 .project-modal-header>div {
-
     padding: 35px;
 }
 
 .project-modal-label {
-
-    color: #49d17d;
-
+    color: var(--primary-color);
     font-size: 0.7rem;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .project-modal-header h2 {
-
     margin: 10px 0;
-
     color: white;
-
     font-size: 2rem;
 }
 
 .project-modal-role {
-
-    color: #b8bec9;
-
     margin: 0;
+    color: #b8bec9;
 }
 
-/* Contenu */
-
+/* Corps */
 .project-modal-body {
-
     padding: 30px 40px 40px;
+    color: white;
+}
+
+#modalProjectTitle {
+    color: var(--primary-color);
+}
+
+#modalProjectDescription {
+    margin-bottom: 30px;
+    color: #e5e7eb;
+    line-height: 1.7;
+    text-align: left;
+    white-space: pre-line;
 }
 
 .project-modal-section {
-
     margin-bottom: 28px;
 }
 
 .project-modal-section:last-child {
-
     margin-bottom: 0;
 }
 
 .project-modal-section h3 {
-
-    color: #49d17d;
-
-    font-size: 1rem;
-
     margin-bottom: 12px;
-
+    color: var(--primary-color);
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
 .project-modal-section p {
-
-    color: #e5e7eb;
-
-    line-height: 1.7;
-
     margin: 0;
+    color: #e5e7eb;
+    line-height: 1.7;
 }
 
 /* Missions */
-
 .project-missions {
-
-    list-style: none;
-
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .project-missions li {
-
-    color: #e5e7eb;
-
     margin-bottom: 8px;
-
+    color: #e5e7eb;
     font-size: 0.9rem;
 }
 
 /* Technologies */
-
 .project-technologies {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
 }
 
 .project-technologies span {
-
     padding: 6px 12px;
-
-    border: 1px solid rgba(73, 209, 125, 0.35);
-
-    border-radius: 20px;
-
-    background: rgba(73, 209, 125, 0.06);
-
-    color: #49d17d;
-
+    color: var(--primary-color);
     font-size: 0.75rem;
-
     font-weight: 600;
+    background: rgba(73, 209, 125, 0.06);
+    border: 1px solid rgba(73, 209, 125, 0.35);
+    border-radius: 20px;
 }
 
-/* Bloque le scroll de la page quand la modale est ouverte */
+/* Bouton */
+.project-modal-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.project-modal-button:hover {
+    color: #000;
+    background: var(--primary-color);
+}
 
 body.modal-open {
-
     overflow: hidden;
 }
 
-/* contact */
+/****** CONTACT ******/
+
 .contactColumn {
     display: flex;
     flex-direction: column;
@@ -929,32 +701,40 @@ body.modal-open {
 }
 
 .contactColumn i {
-    color: #198754;
+    display: inline-block;
     width: 32px;
     height: 32px;
-    display: inline-block;
+    color: #198754;
 }
 
+.fa-2x {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/****** FINAL TEST ******/
+
 .final-test {
-    text-align: center;
     margin-top: 80px;
     padding-bottom: 40px;
+    text-align: center;
 }
 
 .final-test-line {
     width: 2px;
     height: 80px;
-    background: rgb(255, 255, 255);
     margin: 0 auto 25px;
+    background: white;
     transition: background 0.6s ease;
 }
 
 .final-test-status {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: 700;
     letter-spacing: 2px;
     transition: all 0.6s ease;
@@ -966,20 +746,18 @@ body.modal-open {
 }
 
 .final-test p {
-    color: rgb(255, 255, 255);
-    font-size: 0.85rem;
     margin-top: 10px;
+    color: white;
+    font-size: 0.85rem;
 }
 
-/* Quand tous les tests sont validés */
-
 .final-test.is-complete .final-test-line {
-    background: #49d17d;
+    background: var(--primary-color);
     box-shadow: 0 0 10px rgba(73, 209, 125, 0.5);
 }
 
 .final-test.is-complete .final-test-status {
-    color: #49d17d;
+    color: var(--primary-color);
     text-shadow: 0 0 12px rgba(73, 209, 125, 0.5);
 }
 
@@ -989,30 +767,28 @@ body.modal-open {
 }
 
 .final-test.is-complete p {
-    color: #49d17d;
+    color: var(--primary-color);
+}
+
+/****** FOOTER ******/
+
+footer {
+    margin-top: 0;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+}
+
+footer p {
+    margin: 0;
 }
 
 
-
-/* footer */
-
-.fa-2x {
-    color: #49d17d;
-    margin-bottom: 20px;
-    margin-top: 50px;
-}
-
-p {
-    color: white;
-}
-
+/****** TABLETTES ET MOBILES ******/
 
 @media (max-width: 768px) {
 
-    /* =========================
-       NAVBAR
-       ========================= */
 
+    /* Navbar */
     .navbar.fixed-top {
         position: sticky !important;
         top: 0;
@@ -1020,10 +796,9 @@ p {
         background-color: #000 !important;
     }
 
-    /* Menu déplié */
     .navbar-collapse {
-        background-color: #000;
         padding: 10px 0 15px;
+        background-color: #000;
     }
 
     .navbar-nav {
@@ -1034,11 +809,7 @@ p {
         padding: 10px 15px;
     }
 
-
-    /* =========================
-       HERO
-       ========================= */
-
+    /* Hero */
     .bgimage {
         min-height: auto;
         padding: 75px 10px 30px;
@@ -1055,19 +826,15 @@ p {
         line-height: 1.5;
     }
 
-
-    /* =========================
-       TEST DASHBOARD
-       ========================= */
-
+    /* Dashboard */
     .test-dashboard {
         width: 100%;
         max-width: 100%;
     }
 
     .test-header {
-        padding: 15px;
         gap: 10px;
+        padding: 15px;
     }
 
     .test-logo {
@@ -1087,23 +854,18 @@ p {
     }
 
     .test-checks p {
-        font-size: 0.85rem;
         margin: 10px 0;
+        font-size: 0.85rem;
     }
 
-    /* Le bouton ne doit plus être en position absolue sur mobile */
     .test-button {
         position: static;
         display: inline-block;
-        transform: none;
         margin-top: 20px;
+        transform: none;
     }
 
-
-    /* =========================
-       COLONNE TEST
-       ========================= */
-
+    /* Colonne test */
     .about-layout {
         flex-direction: column;
     }
@@ -1114,16 +876,16 @@ p {
     }
 
     .test-progress-line {
-        width: 2px;
         flex: 1;
+        width: 2px;
         margin: 15px 0;
     }
 
+    .column-test .passed {
+        display: none;
+    }
 
-    /* =========================
-       ABOUT
-       ========================= */
-
+    /* About */
     .about-row {
         grid-template-columns: 1fr;
     }
@@ -1133,11 +895,11 @@ p {
     }
 
     .about-description {
-        padding-left: 0;
-        padding-top: 25px;
         margin-top: 30px;
-        border-left: none;
+        padding-top: 25px;
+        padding-left: 0;
         border-top: 2px solid rgba(73, 209, 125, 0.2);
+        border-left: none;
     }
 
     .imageAboutPage {
@@ -1145,11 +907,7 @@ p {
         height: 160px;
     }
 
-
-    /* =========================
-       SKILLS
-       ========================= */
-
+    /* Skills */
     .skillsText.card {
         height: auto;
         min-height: 350px;
@@ -1159,11 +917,7 @@ p {
         height: 130px;
     }
 
-
-    /* =========================
-       PORTFOLIO
-       ========================= */
-
+    /* Portfolio */
     .portfolioContent.card {
         height: auto;
         min-height: 430px;
@@ -1178,13 +932,23 @@ p {
         min-height: 240px;
     }
 
+    /* Modale */
     .project-modal-content {
         width: 95%;
         max-height: 90vh;
     }
 
-    .project-modal-image {
+    .project-modal-header {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal-header img {
         height: 180px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .project-modal-header>div {
+        padding: 25px;
     }
 
     .project-modal-body {
@@ -1196,35 +960,21 @@ p {
         gap: 15px;
     }
 
-
-    /* =========================
-       CONTACT
-       ========================= */
-
+    /* Contact */
     .contactColumn {
         margin-bottom: 25px;
     }
 
-
-    /* =========================
-       FINAL TEST
-       ========================= */
-
+    /* Final test */
     .final-test {
         margin-top: 60px;
         padding-bottom: 30px;
     }
 
-    .column-test .passed {
-        display: none;
-    }
 
 }
 
-
-/* =========================
-   PETITS TÉLÉPHONES
-   ========================= */
+/****** PETITS TÉLÉPHONES ******/
 
 @media (max-width: 480px) {
 
@@ -1240,15 +990,13 @@ p {
         font-size: 1rem;
     }
 
-    /* Dashboard */
-    .test-dashboard {
-        width: 100%;
-    }
-
     .test-header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+    }
+
+    .test-dashboard {
+        width: 100%;
     }
 
     .test-content {
@@ -1259,22 +1007,20 @@ p {
         font-size: 0.8rem;
     }
 
-    /* À propos */
     .imageAboutPage {
         width: 140px;
         height: 140px;
     }
 
     .about-description {
-        padding-top: 20px;
         margin-top: 25px;
+        padding-top: 20px;
     }
 
     .about-description p {
         font-size: 0.9rem;
     }
 
-    /* Cartes compétences */
     .skillsText.card {
         min-height: 330px;
     }
@@ -1283,7 +1029,6 @@ p {
         height: 120px;
     }
 
-    /* Cartes portfolio */
     .portfolioContent.card {
         min-height: 0;
         height: auto;
@@ -1307,12 +1052,10 @@ p {
         font-size: 0.85rem;
     }
 
-    /* Contact */
     .contactColumn {
         margin-bottom: 20px;
     }
 
-    /* Final test */
     .final-test {
         margin-top: 50px;
     }
@@ -1326,16 +1069,10 @@ p {
         font-size: 0.7rem;
     }
 
-    .column-test .passed {
-        display: none;
-    }
 
 }
 
-
-/* =========================
-   TRÈS PETITS TÉLÉPHONES
-   ========================= */
+/****** TRÈS PETITS TÉLÉPHONES ******/
 
 @media (max-width: 360px) {
 
@@ -1379,4 +1116,5 @@ p {
     .portfolioContent .card-text {
         font-size: 0.8rem;
     }
+
 }
